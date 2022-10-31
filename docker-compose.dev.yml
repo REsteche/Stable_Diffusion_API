@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: ${APP_NAME}-${ENV_NAME}
+    image: ${APP_NAME}:${ENV_NAME}
+    build: .
+    command: gunicorn -w 1 -k uvicorn.workers.UvicornH11Worker -b 0.0.0.0:8000 main:app
+    env_file:
+      - .env
+    ports:
+      - "${EXTERNAL_PORT}:8000"
+    depends_on:
+      - cache
+    networks:
+      - host
+
+  cache:
+    container_name: ${APP_NAME}-${ENV_NAME}-redis
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - "${REDIS_PORT}:6379"
+    command: redis-server --requirepass ${REDIS_AUTH} --appendonly yes
+    volumes:
+       - volumedb:/var/lib/redis/data
+       - ./redis.config:/usr/local/etc/redis/redis.conf
+    networks:
+      - host
+
+networks:
+  host:
+
+volumes:
+  volumedb:
