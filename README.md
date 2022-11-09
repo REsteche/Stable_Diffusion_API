@@ -1,19 +1,19 @@
 # Stable diffusion API 📚🔎
-![version](https://img.shields.io/badge/version-0.0.1-blue)
+![version](https://img.shields.io/badge/version-0.0.3-blue)
 ![python](https://img.shields.io/badge/python-3.8.7-brightgreen)
 
 ### Local installation ###
 
 To prepare the project, the following steps will be necessary:
-> - Install [python 3](https://www.python.org/) and [git](https://git-scm.com/downloads);
+> - Install [git](https://git-scm.com/downloads) locally;
 > - On your local server, run a `git clone` command;
-> - Download the requirements.txt file with the project dependencies by typing `pip install -r requirements.txt` (it is strongly recommended that you do it within a virtual environment .env to avoid version conflict with other packages in your base installation.).
 
-### To run it locally ###
-There are two ways to run the application locally, 
-> - Open a cmd prompt inside the directory where you installed the application, and access your virtual environment (recommended) or your (base:) environment and run the command `python main.py`.
-> - Install docker on your machine through [Link](https://docs.docker.com/get-docker/), open a cmd inside your aplication directory and run `docker-compose -f docker-compose.dev.yml up --build -d` to create both the image and container for your aplication. 
+### Local execution ###
+To execute the project, there's two ways to do it:
+> - First download [python 3](https://www.python.org/). After, install the dependencies by typing `pip install -r requirements.txt` and run `python main.py` on your terminal if you just want to verify all the routes and see if the API algorithm is working;
+> - If you already have Docker installed on you machine, run `docker-compose -f docker-compose.dev.yml up --build -d` on the terminal to create an image and container for the aplication (and for the cache server when it's available). This way allows you to install all application dependencies as well as automate the API testing process through docker;
 
+> **In both flows, after uploading the application you can access it at localhost:8000/docs, as well as check the logs informations at localhost:5000/stable-diffusion/logs**.
 
 ### Feature ###
 
