@@ -13,7 +13,7 @@ To execute the project, there's two ways to do it:
 > - First download [python 3](https://www.python.org/). After, install the dependencies by typing `pip install -r requirements.txt` and run `python main.py` on your terminal if you just want to verify all the routes and see if the API algorithm is working;
 > - If you already have Docker installed on you machine, run `docker-compose -f docker-compose.dev.yml up --build -d` on the terminal to create an image and container for the aplication (and for the cache server when it's available). This way allows you to install all application dependencies as well as automate the API testing process through docker;
 
-> **In both flows, after uploading the application you can access it at localhost:8000/docs, as well as check the logs informations at localhost:5000/stable-diffusion/logs**.
+> **In both flows, after uploading the application you can access it at localhost:8000/docs, as well as check the logs informations at localhost:8000/stable-diffusion/logs**.
 
 ### Feature ###
 
