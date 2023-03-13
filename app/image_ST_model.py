@@ -3,7 +3,7 @@ from diffusers import StableDiffusionPipeline
 import os
 
 
-access_token = "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"
+access_token = "" # include your own acess token from hugging faces here
 model_id = "CompVis/stable-diffusion-v1-4"
 device = "cuda"
 
