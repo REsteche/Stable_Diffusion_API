@@ -9,6 +9,6 @@ router = APIRouter(
 @router.get("/stable-diffusion/logs", response_class = PlainTextResponse)
 async def get_logs():
    
-    response = open("app/performance/logfile_ster.log", "r", encoding = "utf-8").read()
+    response = open("app/performance/logfile.log", "r", encoding = "utf-8").read()
     
     return response
